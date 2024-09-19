@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Vedant's Bazaar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .team-member {
+            transition: transform 0.3s ease;
+        }
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-teal-600 p-4 text-white">
+        <div class="container mx-auto flex justify-between">
+            <h1 class="text-3xl">Vedant's Bazaar</h1>
+            <nav>
+                <a href="index.html" class="mx-2">Home</a>
+                <a href="products.html" class="mx-2">Products</a>
+                <a href="about.html" class="mx-2">About Us</a>
+                <a href="contact.html" class="mx-2">Contact Us</a>
+                <a href="cart.html" class="mx-2">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="mt-8">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">About Us</h2>
+            <a href="documents/catalog.pdf" target="_blank" class="bg-teal-600 text-white px-4 py-2 mt-4 inline-block">Download Our Catalog</a>
+            <p class="text-gray-700 mt-4 mb-8">At Vedant's Bazaar, we are committed to providing high-quality products and exceptional customer service. Our team is passionate about curating the best products to meet your needs. Learn more about our team and mission below.</p>
+
+            <div class="flex flex-wrap justify-center">
+                <div class="team-member bg-white p-6 m-4 rounded shadow-lg w-80 hover:bg-gray-100">
+                    <img src="images/team1.jpg" alt="Team Member 1" class="w-full h-48 object-cover rounded-t">
+                    <h3 class="text-xl font-semibold mt-4">John Doe</h3>
+                    <p class="text-gray-600">Founder & CEO</p>
+                    <p class="mt-2">John is the visionary behind Vedant's Bazaar, dedicated to delivering an unparalleled shopping experience.</p>
+                </div>
+                <div class="team-member bg-white p-6 m-4 rounded shadow-lg w-80 hover:bg-gray-100">
+                    <img src="images/team2.jpg" alt="Team Member 2" class="w-full h-48 object-cover rounded-t">
+                    <h3 class="text-xl font-semibold mt-4">Jane Smith</h3>
+                    <p class="text-gray-600">Head of Marketing</p>
+                    <p class="mt-2">Jane ensures our products reach you with the best promotions and advertisements.</p>
+                </div>
+                <div class="team-member bg-white p-6 m-4 rounded shadow-lg w-80 hover:bg-gray-100">
+                    <img src="images/team3.jpg" alt="Team Member 3" class="w-full h-48 object-cover rounded-t">
+                    <h3 class="text-xl font-semibold mt-4">Alice Johnson</h3>
+                    <p class="text-gray-600">Customer Support Lead</p>
+                    <p class="mt-2">Alice is dedicated to providing excellent support to our valued customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-teal-600 p-4 text-white text-center mt-8">
+        &copy; 2024 Vedant's Bazaar
+    </footer>
+</body>
+</html>

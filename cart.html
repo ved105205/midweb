@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | Vedant's Bazaar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .cart-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .cart-table th, .cart-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .cart-table th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-teal-600 p-4 text-white">
+        <div class="container mx-auto flex justify-between">
+            <h1 class="text-3xl">Vedant's Bazaar</h1>
+            <nav>
+                <a href="index.html" class="mx-2">Home</a>
+                <a href="products.html" class="mx-2">Products</a>
+                <a href="about.html" class="mx-2">About Us</a>
+                <a href="contact.html" class="mx-2">Contact Us</a>
+                <a href="cart.html" class="mx-2">Cart</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container mx-auto mt-8">
+        <h2 class="text-2xl font-bold">Your Cart</h2>
+        <table class="cart-table mt-4">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2">Product</th>
+                    <th class="px-4 py-2">Quantity</th>
+                    <th class="px-4 py-2">Price (₹)</th>
+                    <th class="px-4 py-2">Total (₹)</th>
+                </tr>
+            </thead>
+            <tbody id="cart-table">
+                <!-- Cart items will be added here by JavaScript -->
+            </tbody>
+        </table>
+        <div class="text-right mt-8">
+            <p id="cart-total" class="text-xl">Total: ₹0</p>
+            <button class="bg-teal-600 text-white px-6 py-2 mt-4">Proceed to Checkout</button>
+        </div>
+    </section>
+
+    <footer class="bg-teal-600 p-4 text-white text-center mt-8">
+        &copy; 2024 Vedant's Bazaar
+    </footer>
+
+    <script>
+        // Sample cart data
+        let cart = [
+            { product: 'Product 1', price: 3750, quantity: 1 },
+            { product: 'Product 2', price: 2250, quantity: 2 },
+        ];
+
+        function updateCartUI() {
+            const cartTable = document.querySelector('#cart-table');
+            cartTable.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="border px-4 py-2">${item.product}</td>
+                    <td class="border px-4 py-2">${item.quantity}</td>
+                    <td class="border px-4 py-2">${item.price}</td>
+                    <td class="border px-4 py-2">${item.price * item.quantity}</td>
+                `;
+                cartTable.appendChild(row);
+                total += item.price * item.quantity;
+            });
+
+            document.querySelector('#cart-total').textContent = `Total: ₹${total}`;
+        }
+
+        // Update the cart UI when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartUI();
+        });
+    </script>
+</body>
+</html>
